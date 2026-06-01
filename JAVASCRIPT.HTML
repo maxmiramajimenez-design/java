@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estiolo.css">
+</head>
+<body>
+    <div id="cabecera">
+        <h1>JavaScript</h1>
+    </div>
+    <div id="menu">
+        <a href="css.html" class="item_menu">CSS</a>
+    </div>
+    <style>
+
+        /* Diseño de los cuadros */
+        #cuadroColor,
+        #cuadroImagen{
+            width: 250px;
+            height: 200px;
+            border: 2px solid black;
+            margin-top: 10px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #cuadroImagen img{
+            width: 200px;
+            height: 150px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h2>Seleccionar Color</h2>
+
+    <select id="selectColor">
+        <option value="red">Rojo</option>
+        <option value="blue">Azul</option>
+        <option value="yellow">Amarillo</option>
+    </select>
+
+    <button onclick="mostrarColor()">
+        Mostrar
+    </button>
+
+    <div id="cuadroColor"></div>
+
+    <hr>
+
+    <h2>Seleccionar:</h2> 
+
+    <select id="selectImagen">
+
+        
+    <option value="https://png.pngtree.com/png-clipart/20210722/ourmid/pngtree-car-red-trolley-sports-car-png-image_6561572.png">
+        Carro
+    </option>
+
+    <option value="https://static.vecteezy.com/system/resources/thumbnails/029/749/229/small/artistic-style-motorcycle-painting-drawing-no-background-perfect-for-print-on-demand-ai-generative-png.png">
+        Moto
+    </option>
+
+    <option value="https://w7.pngwing.com/pngs/998/319/png-transparent-electric-bicycle-focus-bikes-mountain-bike-cycling-focus-bicycle-frame-bicycle-hybrid-bicycle-thumbnail.png">
+        Bicicleta
+    </option>
+
+    </select>
+
+    <button onclick="mostrarImagen()">
+        Mostrar
+    </button>
+
+    <div id="cuadroImagen"></div>
+
+
+    <script>
+
+        // Mostrar color
+        function mostrarColor(){
+
+            let color =
+                document.getElementById("selectColor").value;
+
+            document.getElementById("cuadroColor")
+            .style.backgroundColor = color;
+        }
+
+
+        // Mostrar imagen
+        function mostrarImagen(){
+
+            let imagen =
+                document.getElementById("selectImagen").value;
+
+            document.getElementById("cuadroImagen").innerHTML =
+                "<img src='" + imagen + "'>";
+        }
+
+    </script>
+</body>
+</html>
